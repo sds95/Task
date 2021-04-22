@@ -1,0 +1,13 @@
+C:\Users\SDS\source\repos\Napominalka\bin\Debug\netcoreapp3.1\Napominalka.exe
+C:\Users\SDS\source\repos\Napominalka\bin\Debug\netcoreapp3.1\Napominalka.deps.json
+C:\Users\SDS\source\repos\Napominalka\bin\Debug\netcoreapp3.1\Napominalka.runtimeconfig.json
+C:\Users\SDS\source\repos\Napominalka\bin\Debug\netcoreapp3.1\Napominalka.runtimeconfig.dev.json
+C:\Users\SDS\source\repos\Napominalka\bin\Debug\netcoreapp3.1\Napominalka.dll
+C:\Users\SDS\source\repos\Napominalka\bin\Debug\netcoreapp3.1\Napominalka.pdb
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.csprojAssemblyReference.cache
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.AssemblyInfoInputs.cache
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.AssemblyInfo.cs
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.csproj.CoreCompileInputs.cache
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.dll
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.pdb
+C:\Users\SDS\source\repos\Napominalka\obj\Debug\netcoreapp3.1\Napominalka.genruntimeconfig.cache
