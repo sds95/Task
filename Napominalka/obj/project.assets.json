@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SDS\\source\\repos\\Napominalka\\Napominalka.csproj",
+      "projectUniqueName": "D:\\repository\\Task\\Napominalka\\Napominalka.csproj",
       "projectName": "Napominalka",
-      "projectPath": "C:\\Users\\SDS\\source\\repos\\Napominalka\\Napominalka.csproj",
+      "projectPath": "D:\\repository\\Task\\Napominalka\\Napominalka.csproj",
       "packagesPath": "C:\\Users\\SDS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SDS\\source\\repos\\Napominalka\\obj\\",
+      "outputPath": "D:\\repository\\Task\\Napominalka\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
