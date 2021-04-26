@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Napominalka
 {
-    class DeleteTask
+    class TaskRepozitory
     {
-
+        
     }
 }

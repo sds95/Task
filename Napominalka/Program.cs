@@ -37,6 +37,7 @@ namespace Napominalka
                         switch (find)
                         {
                             case "-st":
+
                                 break;
                             case "-end":
                                 break;
