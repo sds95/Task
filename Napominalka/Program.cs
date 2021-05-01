@@ -6,26 +6,30 @@ namespace Napominalka
     {
         static void Main(string[] args)
         {
+            ITaskRepozitory taskRepozitory = null;
             bool exit = false;
             Task[] tasks = new Task[50000];
             int i = 1;
             while (!exit)
             {
-                Console.WriteLine("Введите команду: ");
+                Console.WriteLine("Введите команду: "); 
                 string command = Console.ReadLine()
                     .ToLowerInvariant();
 
                 switch (command)
                 {
                     case "create":
+                    case "add":
                         Guid guid = Guid.NewGuid();
                         Console.WriteLine("Введите текст заметки: ");
                         string data = Console.ReadLine();
                         Task task = new Task(guid, data);
-                        tasks[i] =  task;
-                        i++;
+                        taskRepozitory.Add(task);
+                   //     tasks[i] =  task;
+                   //     i++;
                         break;
                     case "list -all":
+                        tasks = taskRepozitory.List(); 
                         Console.WriteLine("Ваши заметки: ");
                         for (int j = 1; j < i; j++)
                         {
@@ -33,11 +37,12 @@ namespace Napominalka
                         }
                         break;
                     case "find":
+                    case "search":
+                        tasks = taskRepozitory.Searsh();
                         string find = Console.ReadLine();
                         switch (find)
                         {
                             case "-st":
-
                                 break;
                             case "-end":
                                 break;
@@ -50,10 +55,12 @@ namespace Napominalka
                     case "del":
                         Console.WriteLine("Введите номер заметки, которую хотите удалить: ");
                         int x = Convert.ToInt32(Console.ReadLine());
-                        tasks[x] = null;
+                        taskRepozitory.Delete(x); 
+                    //    tasks[x] = null;
                         break;
                     case "help":
-
+                        Console.WriteLine("ХУЙ ТЕБЕ А НЕ ПОМОЩЬ!");
+                        break;
                     case "exit":
                         exit = true;
                         break;
