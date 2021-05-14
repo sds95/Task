@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Napominalka
 {
@@ -6,9 +7,8 @@ namespace Napominalka
     {
         static void Main(string[] args)
         {
-            ITaskRepozitory taskRepozitory = null;
+            IReminderRepozitory reminderRepozitory = new ReminderRepozitory();
             bool exit = false;
-            Task[] tasks = new Task[50000];
             int i = 1;
             while (!exit)
             {
@@ -20,42 +20,30 @@ namespace Napominalka
                 {
                     case "create":
                     case "add":
-                        Guid guid = Guid.NewGuid();
                         Console.WriteLine("Введите текст заметки: ");
                         string data = Console.ReadLine();
-                        Task task = new Task(guid, data);
-                        taskRepozitory.Add(task);
+                        Reminder task = new Reminder(data);
+                        reminderRepozitory.Add(task);
                    //     tasks[i] =  task;
                    //     i++;
                         break;
                     case "list -all":
-                        tasks = taskRepozitory.List(); 
-                        Console.WriteLine("Ваши заметки: ");
-                        for (int j = 1; j < i; j++)
                         {
-                            Console.WriteLine(j + " " + tasks[j]);
+                            List<Reminder> result = reminderRepozitory.All;
+                            Show(result);
+                            break;
                         }
-                        break;
                     case "find":
                     case "search":
-                        tasks = taskRepozitory.Searsh();
-                        string find = Console.ReadLine();
-                        switch (find)
                         {
-                            case "-st":
-                                break;
-                            case "-end":
-                                break;
-                            case "-cont":
-                                break;
-                            case "-ind":
-                                break;
+                            List<Reminder> result = reminderRepozitory.Search();
+                            Show(result);
+                            break;
                         }
-                        break;                          
                     case "del":
                         Console.WriteLine("Введите номер заметки, которую хотите удалить: ");
                         int x = Convert.ToInt32(Console.ReadLine());
-                        taskRepozitory.Delete(x); 
+                        reminderRepozitory.Delete(); 
                     //    tasks[x] = null;
                         break;
                     case "help":
@@ -69,6 +57,10 @@ namespace Napominalka
                         break;
                 }         
             }
+        }
+        public static void Show(List<Reminder> result)
+        {
+            Console.WriteLine(result);
         }
     }
 }

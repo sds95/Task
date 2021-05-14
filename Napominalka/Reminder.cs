@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Napominalka
 {
-    class Task
+    class Reminder
     {
-        private Guid id;
+        private readonly Guid id;
         private string data;
 
         public override string ToString()
@@ -14,9 +14,12 @@ namespace Napominalka
             return data;
         }
 
-        public Task( Guid id, string data)
+        public Guid Id => id;
+        //public string Data => data;
+
+        public Reminder(string data)
         {
-            this.id = id;
+            id = Guid.NewGuid();
             this.data = data;
         }
     }
