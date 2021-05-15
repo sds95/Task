@@ -61,4 +61,3 @@ namespace Napominalka
     }
 }
 
-// Реализовать Delete.

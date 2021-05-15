@@ -41,10 +41,12 @@ namespace Napominalka
                             break;
                         }
                     case "del":
-                        Console.WriteLine("Введите номер заметки, которую хотите удалить: ");
-                        int x = Convert.ToInt32(Console.ReadLine());
-                        reminderRepozitory.Delete(); 
-                    //    tasks[x] = null;
+                        {
+                            List<Reminder> result = reminderRepozitory.All;
+                            Console.WriteLine("Введите номер заметки, которую хотите удалить: ");
+                            int x = Convert.ToInt32(Console.ReadLine());
+                            reminderRepozitory.Delete(result[x].Id);
+                        }
                         break;
                     case "help":
                         Console.WriteLine("ХУЙ ТЕБЕ А НЕ ПОМОЩЬ!");
