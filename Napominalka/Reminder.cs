@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Napominalka
 {
-    class Reminder
+    class Reminder : IReminder
     {
         private readonly Guid id;
         private string data;

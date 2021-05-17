@@ -6,13 +6,11 @@ namespace Napominalka
 {
     class ReminderRepozitory : IReminderRepozitory
     {
-        private List<Reminder> reminders;
-
-        public void Add(Reminder task)
+        private List<IReminder> reminders = new List<IReminder>(); 
+        public void Add(IReminder task)
         {
             reminders.Add(task);
         }
-
         public void Delete(Guid id)
         {
          /* for (int i = 0; i < reminders.Count; i++)
@@ -49,14 +47,13 @@ namespace Napominalka
         {
             return reminders;
         }*/
+        public List<IReminder> All => reminders;
 
-        public List<Reminder> All => reminders;
-
-        List<Reminder> IReminderRepozitory.Search()
+        List<IReminder> IReminderRepozitory.Search()
         {
             Console.Write("Введите что найти - ");
             string finding = Console.ReadLine();
-            return reminders.FindAll(reminder => reminder.ToString() == finding );
+            return reminders.FindAll(reminder => reminder.ToString().Contains(finding));
         }
     }
 }

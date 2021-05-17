@@ -6,10 +6,9 @@ namespace Napominalka
 {
     interface IReminderRepozitory
     {
-
-        void Add(Reminder task);
+        void Add(IReminder task);
         void Delete(Guid id); 
-        List<Reminder> All { get; } 
-        List<Reminder> Search();
+        List<IReminder> All { get; } 
+        List<IReminder> Search();
     }
 }

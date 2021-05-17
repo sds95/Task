@@ -9,7 +9,6 @@ namespace Napominalka
         {
             IReminderRepozitory reminderRepozitory = new ReminderRepozitory();
             bool exit = false;
-            int i = 1;
             while (!exit)
             {
                 Console.WriteLine("Введите команду: "); 
@@ -22,27 +21,25 @@ namespace Napominalka
                     case "add":
                         Console.WriteLine("Введите текст заметки: ");
                         string data = Console.ReadLine();
-                        Reminder task = new Reminder(data);
+                        IReminder task = new Reminder(data);
                         reminderRepozitory.Add(task);
-                   //     tasks[i] =  task;
-                   //     i++;
                         break;
-                    case "list -all":
+                    case "list":
                         {
-                            List<Reminder> result = reminderRepozitory.All;
+                            List<IReminder> result = reminderRepozitory.All;
                             Show(result);
                             break;
                         }
                     case "find":
                     case "search":
                         {
-                            List<Reminder> result = reminderRepozitory.Search();
+                            List<IReminder> result = reminderRepozitory.Search();
                             Show(result);
                             break;
                         }
                     case "del":
                         {
-                            List<Reminder> result = reminderRepozitory.All;
+                            List<IReminder> result = reminderRepozitory.All;
                             Console.WriteLine("Введите номер заметки, которую хотите удалить: ");
                             int x = Convert.ToInt32(Console.ReadLine());
                             reminderRepozitory.Delete(result[x].Id);
@@ -60,9 +57,14 @@ namespace Napominalka
                 }         
             }
         }
-        public static void Show(List<Reminder> result)
+        public static void Show(List<IReminder> result)
         {
-            Console.WriteLine(result);
+            int i = 1;
+            foreach (IReminder reminder in result)
+            {
+                Console.WriteLine($"{i} {reminder.ToString()}");
+                i++;
+            }
         }
     }
 }
