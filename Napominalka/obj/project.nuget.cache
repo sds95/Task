@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "o7gs2UyFj+efF5y8oeueTjO5wQxTOFNemGDR3Qv5NxxC3g+TYdoXK696/t9kqE92pH+5GsfJLhU8tHplzM6vBw==",
+  "dgSpecHash": "erK1I7clg05Ts80s0IRNURUeXyFBIcQurm1L0g6Yu/lM6h0K/Z1MnEdH3prYRnwbucH9fulFcp/LKatF1VUaIA==",
   "success": true,
   "projectFilePath": "D:\\repository\\Task\\Napominalka\\Napominalka.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\SDS\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\mongodb.bson\\2.12.3\\mongodb.bson.2.12.3.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\mongodb.driver\\2.12.3\\mongodb.driver.2.12.3.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\mongodb.driver.core\\2.12.3\\mongodb.driver.core.2.12.3.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\mongodb.libmongocrypt\\1.2.1\\mongodb.libmongocrypt.1.2.1.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\sharpcompress\\0.23.0\\sharpcompress.0.23.0.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\SDS\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512"
+  ],
   "logs": []
 }
