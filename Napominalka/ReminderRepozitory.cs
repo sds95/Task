@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 using MongoDB.Bson;
 
 namespace Napominalka
@@ -15,11 +15,11 @@ namespace Napominalka
             string connectionstring = "mongodb://localhost:27017";
             database = new Database(connectionstring);
         }
-        public void Add(IReminder task)
+        public Task AddAsync(IReminder task)
         {
-            database.Add(task);
+            return database.AddAsync(task);
         }
-        public void Delete(ObjectId id)
+        public Task DeleteAsync(ObjectId id)
         {
             /* for (int i = 0; i < reminders.Count; i++)
                {
@@ -48,28 +48,29 @@ namespace Napominalka
                    return id == reminder.Id; 
                }); */
 
-            reminders.RemoveAll(reminder => id == reminder.Id);
-        }
-        /*List<Reminder> IReminderRepozitory.ToList()
-        {
-            return reminders;
-        }*/
+            //reminders.RemoveAll(reminder => id == reminder.Id);
 
-        public List<IReminder> All
-        {
-            get 
-            {
-                var task = this.database.GetAll();
-                reminders = task.Result;
-                return reminders;    
-            }
+            return database.DeleteDocumentAsync(id);
         }
-        
         List<IReminder> IReminderRepozitory.Search()
         {
             Console.Write("Введите что найти - ");
             string finding = Console.ReadLine();
             return reminders.FindAll(reminder => reminder.ToString().Contains(finding));
+        }
+
+        /*List<Reminder> IReminderRepozitory.ToList()
+        {
+            return reminders;
+        }*/
+        public List<IReminder> All
+        {
+            get 
+            {
+                var task = this.database.GetAllAsync();
+                reminders = task.Result;
+                return reminders;    
+            }
         }
     }
 }

@@ -19,13 +19,12 @@ namespace Napominalka
             collection = database.GetCollection<ReminderDocument>("Reminder");
         } 
 
-        public async void Add(IReminder reminder)
-
+        public async Task AddAsync(IReminder reminder)
         {
             var document = new ReminderDocument(reminder);
             await collection.InsertOneAsync(document);
         }
-        public async Task<List<IReminder>> GetAll()
+        public async Task<List<IReminder>> GetAllAsync()
         {
             var filter = new BsonDocument();
             var documents = await collection.Find(filter).ToListAsync();
@@ -35,6 +34,11 @@ namespace Napominalka
                 reminders.Add(ReminderDocument.ConverToIReminder(document));
             }
             return reminders;
+        }
+        public async Task DeleteDocumentAsync (ObjectId id)
+        {
+            var filter = new BsonDocument("_id", id);
+            await collection.DeleteOneAsync(filter);
         }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Napominalka
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             IReminderRepozitory reminderRepozitory = new ReminderRepozitory();
             bool exit = false;
@@ -22,7 +23,7 @@ namespace Napominalka
                         Console.WriteLine("Введите текст заметки: ");
                         string data = Console.ReadLine();
                         IReminder task = new Reminder(data);
-                        reminderRepozitory.Add(task);
+                        await reminderRepozitory.AddAsync(task);
                         break;
                     case "list":
                         {
@@ -42,7 +43,7 @@ namespace Napominalka
                             List<IReminder> result = reminderRepozitory.All;
                             Console.WriteLine("Введите номер заметки, которую хотите удалить: ");
                             int x = Convert.ToInt32(Console.ReadLine());
-                            reminderRepozitory.Delete(result[x].Id);
+                            await reminderRepozitory.DeleteAsync(result[x-1].Id);
                         }
                         break;
                     case "help":
